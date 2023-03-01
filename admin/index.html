@@ -23,47 +23,71 @@
         <nav class="nav">
             <div>
                 <a href="#" class="nav__logo">
-                    <i class="bx bx-layer nav_logo-icon"></i>
+                    <i class="bx bx-layer nav__logo-icon"></i>
                     <span class="nav__logo-name">Admin Panel</span>
                 </a>
                 <div class="nav__list">
                     <a href="#" class="nav__link active">
-                        <i class="bx bx-grid-alt nav_icon"></i>
-                        <span class="nav__name">Dashboard</span>
+                        <i class="bx bx-home-circle nav__icon"></i>
+                        <span class="nav__name">Home</span>
                     </a>
                     <a href="#" class="nav__link">
-                        <i class="bx bx-stopwatch nav_icon"></i>
-                        <span class="nav__name">Campaigns</span>
+                        <i class="bx bx-book-bookmark nav__icon"></i>
+                        <span class="nav__name">Skills</span>
                     </a>
                     <a href="#" class="nav__link">
-                        <i class="bx bx-message-square-detail nav_icon"></i>
-                        <span class="nav__name">Notification</span>
+                        <i class="bx bx-message-square-detail nav__icon"></i>
+                        <span class="nav__name">Service</span>
                     </a>
                     <a href="#" class="nav__link">
-                        <i class="bx bx-list-ul nav_icon"></i>
-                        <span class="nav__name">List</span>
-                    </a>
-                    <a href="#" class="nav__link">
-                        <i class="bx bx-bar-chart-alt-2 nav_icon"></i>
-                        <span class="nav__name">Analytics</span>
-                    </a>
-                    <a href="#" class="nav__link">
-                        <i class="bx bx-mail-send nav_icon"></i>
-                        <span class="nav__name">Support</span>
+                        <i class="bx bx-phone-call nav__icon"></i>
+                        <span class="nav__name">Contact</span>
                     </a>
                 </div>
             </div>
             <a href="#" class="nav__link">
-                <i class="bx bx-log-out nav_icon"></i>
+                <i class="bx bx-log-out nav__icon"></i>
                 <span class="nav__name">Log Out</span>
             </a>
         </nav>
     </div>
+    <div class="main-content">
+        <div class="section__content section__content--p30">
+            <div class="container-fluid">
+                <div class="row m-t-10">
+                    <div class="col-md-12">
+                        <!-- DATA TABLE-->
+                        <div class="float-left">
+                            <h3>Edit Home Section</h3>
+                        </div>
+                        <br /><br />
+                        <form action="../backend/edit.php?id=<?php echo $id;?>&action=edit-aboutmis" method="POST">
 
-    <h1>Lorem Ipsum</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse urna odio, dictum non velit nec, tristique molestie est. Nunc id leo nisi. Phasellus elit leo, scelerisque imperdiet lorem non, accumsan feugiat ipsum. Praesent velit leo, ultricies
-        vel faucibus in, dictum in mi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi eget justo accumsan, tristique nunc sit amet, placerat ante. Curabitur venenatis luctus sapien, ut sodales nunc faucibus
-        ac. Fusce imperdiet, risus sed pretium elementum, tellus urna volutpat sapien, cursus elementum arcu dui et elit. Morbi ac finibus neque.</p>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Name</label>
+                                <input Required name="about_mis_newtitle" type="text" class="form-control" id="exampleFormControlInput1" value="" />
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Job/Position</label>
+                                <input Required name="about_mis_newtitle" type="text" class="form-control" id="exampleFormControlInput1" value="" />
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Country</label>
+                                <input Required name="about_mis_newtitle" type="text" class="form-control" id="exampleFormControlInput1" value="" />
+                            </div>
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Update" />
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                    Cancel
+                  </button>
+                    </form>
+
+                    <!-- END DATA TABLE-->
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
     <script src="main.js"></script>
 </body>
 
