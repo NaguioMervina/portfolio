@@ -1,3 +1,6 @@
+<?php
+    include ('connection.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,10 +48,19 @@
     <section class="home" id="home">
         <div class="home-content">
             <div class="text">
+            <?php
+                                      $query=mysqli_query($con,"select * from home");
+                                    
+                                      while($row=mysqli_fetch_assoc($query))
+                                      {
+                                    ?>
                 <div class="text-one">Hello,</div>
-                <div class="text-two">I'm John Doe</div>
-                <div class="text-three">Frontend Developer,</div>
-                <div class="text-four">From United Kingdom,</div>
+                <div class="text-two">I'am <?php echo $row['home_name'];?></div>
+                <div class="text-three"><?php echo $row['home_job'];?></div>
+                <div class="text-four">From <?php echo $row['home_country'];?></div>
+                <?php 
+                                      }
+                                      ?>
             </div>
             <div class="button">
                 <button>Hire Me</button>

@@ -1,3 +1,7 @@
+<?php
+  include ('../connection.php');
+  $id = (isset($_POST['id']) ? $_POST['id'] : '');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,25 +65,32 @@
                             <h3>Edit Home Section</h3>
                         </div>
                         <br /><br />
-                        <form action="../backend/edit.php?id=<?php echo $id;?>&action=edit-aboutmis" method="POST">
-
+                        <form action="./edit.php?id=<?php echo $id;?>&action=edit-home" method="POST">
+                        <?php
+                                      $result=mysqli_query($con,"SELECT * from home where home_id;");
+                                      while($row=mysqli_fetch_assoc($result))
+                                      {
+                                    ?>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Name</label>
-                                <input Required name="about_mis_newtitle" type="text" class="form-control" id="exampleFormControlInput1" value="" />
+                                <input Required name="home_newname" type="text" class="form-control" id="exampleFormControlInput1" value="<?php echo $row['home_name'];?>" />
                             </div>
-                            <div class="form-group">
+                           <div class="form-group">
                                 <label for="exampleFormControlInput1">Job/Position</label>
-                                <input Required name="about_mis_newtitle" type="text" class="form-control" id="exampleFormControlInput1" value="" />
+                                <input Required name="home_newjob" type="text" class="form-control" id="exampleFormControlInput1" value="<?php echo $row['home_job'];?>" />
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Country</label>
-                                <input Required name="about_mis_newtitle" type="text" class="form-control" id="exampleFormControlInput1" value="" />
-                            </div>
+                                <input Required name="home_newcountry" type="text" class="form-control" id="exampleFormControlInput1" value="<?php echo $row['home_country'];?>" />
+                            </div> 
                     </div>
                     <input type="submit" class="btn btn-primary" value="Update" />
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">
                     Cancel
                   </button>
+                  <?php
+                }
+                ?>
                     </form>
 
                     <!-- END DATA TABLE-->
