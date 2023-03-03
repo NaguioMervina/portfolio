@@ -1,5 +1,8 @@
 <?php
   include ('../connection.php');
+  if(!isset($_SESSION['username'])){
+    header('location:./login.php');
+}
   $id = (isset($_POST['id']) ? $_POST['id'] : '');
 ?>
 <!DOCTYPE html>
@@ -49,7 +52,7 @@
                     </a>
                 </div>
             </div>
-            <a href="#" class="nav__link">
+            <a href="logout.php" class="nav__link">
                 <i class="bx bx-log-out nav__icon"></i>
                 <span class="nav__name">Log Out</span>
             </a>
@@ -67,7 +70,7 @@
                         <br /><br />
                         <form action="./edit.php?id=<?php echo $id;?>&action=edit-home" method="POST">
                         <?php
-                                      $result=mysqli_query($con,"SELECT * from home where home_id;");
+                                      $result=mysqli_query($con,"SELECT * from home where home_id=1;");
                                       while($row=mysqli_fetch_assoc($result))
                                       {
                                     ?>
