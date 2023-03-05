@@ -44,14 +44,12 @@ if(isset($_POST['submit'])){
        
 $sql = mysqli_query($con, "SELECT * from admin_user where username = '$username' AND  password = '$password' limit 1");
 $row = mysqli_fetch_array($sql);
-
         if(is_array($row)){
             $_SESSION["username"] = $row['username'];
             $_SESSION["password"] = $row['password'];
         } else{
-
             $error = "Invalid email or password!";
-            header("Location:./login.php?error=$error");
+            header("Location:login.php?error=$error");
           // echo '<script type = "text/javascript">';
          //  echo 'alert("email or password not match");';
          //  echo 'window.location.href = "./login.php"';
@@ -59,7 +57,7 @@ $row = mysqli_fetch_array($sql);
         }
     }
     if(isset($_SESSION["username"])){
-        header("location:./index.php");
+        header("location:index.php");
     }
 ?>
 </body>
