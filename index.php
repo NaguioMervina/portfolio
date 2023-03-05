@@ -81,7 +81,7 @@
             <div class="title"><span>About Me</span></div>
             <div class="about-details">
                 <div class="left">
-                    <img src="./<?php echo $row['about_img'];?>" alt="portfolio">
+                    <img src="<?php echo $row['about_img'];?>" alt="portfolio">
                 </div>
                 <div class="right">
                     <div class="topic"><?php echo $row['about_title'];?></div>

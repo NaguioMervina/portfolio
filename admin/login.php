@@ -8,7 +8,7 @@ include ('../connection.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
     <link rel="stylesheet" href="login.css">
 </head>
 
@@ -35,6 +35,8 @@ include ('../connection.php');
         </form>
     </div>
     
+
+
     <!--login backend-->
     <?php
 if(isset($_POST['submit'])){
@@ -50,10 +52,6 @@ $row = mysqli_fetch_array($sql);
         } else{
             $error = "Invalid email or password!";
             header("Location:login.php?error=$error");
-          // echo '<script type = "text/javascript">';
-         //  echo 'alert("email or password not match");';
-         //  echo 'window.location.href = "./login.php"';
-          // echo '</script>';
         }
     }
     if(isset($_SESSION["username"])){
@@ -61,5 +59,4 @@ $row = mysqli_fetch_array($sql);
     }
 ?>
 </body>
-
 </html>

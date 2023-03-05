@@ -79,56 +79,54 @@
                             <h3>Edit Home Section</h3>
                         </div>
                         <form action="./edit.php?id=<?php echo $id;?>&action=edit-home" method="POST">
-                        <?php
-                                      $result=mysqli_query($con,"SELECT * from home");
-                                      while($row=mysqli_fetch_assoc($result))
-                                      {
-                                    ?>
-                            <div class="form-group mb-3">
-                                <label for="exampleFormControlInput1">Name</label>
-                                <input Required name="home_newname" type="text" class="form-control" id="exampleFormControlInput1" value="<?php echo $row['home_name'];?>" />
-                            </div>
-                           <div class="form-group mb-3">
-                                <label for="exampleFormControlInput1">Job/Position</label>
-                                <input Required name="home_newjob" type="text" class="form-control" id="exampleFormControlInput1" value="<?php echo $row['home_job'];?>" />
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="exampleFormControlInput1">Country</label>
-                                <input Required name="home_newcountry" type="text" class="form-control" id="exampleFormControlInput1" value="<?php echo $row['home_country'];?>" />
-                            </div> 
+                            <?php
+                                $result=mysqli_query($con,"SELECT * from home");
+                                while($row=mysqli_fetch_assoc($result))
+                                {
+                            ?>
+                    <div class="form-group mb-3">
+                        <label for="exampleFormControlInput1">Name</label>
+                        <input Required name="home_newname" type="text" class="form-control" id="exampleFormControlInput1" value="<?php echo $row['home_name'];?>" />
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="exampleFormControlInput1">Job/Position</label>
+                        <input Required name="home_newjob" type="text" class="form-control" id="exampleFormControlInput1" value="<?php echo $row['home_job'];?>" />
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="exampleFormControlInput1">Country</label>
+                        <input Required name="home_newcountry" type="text" class="form-control" id="exampleFormControlInput1" value="<?php echo $row['home_country'];?>" />
+                    </div> 
                     </div>
                     <div class="float-left">
-                            <h3>Edit Link Section</h3>
-                        </div>
-                        <br /><br />
+                        <h3>Edit Link Section</h3>
+                    </div>
+                    <br /><br />
                     <div class="col-md-12">
-                    <div class="form-group mb-3">
-                                        <label for="exampleFormControlInput1">Github Link</label>
-                                        <input Required name="site_newgithub" type="text" class="form-control" id="exampleFormControlInput1" value="<?php echo $row['site_link_github'];?>" />
-                                    </div>
-                                    <div class="form-group mb-3">
-                                        <label for="exampleFormControlInput1">Facebook Link</label>
-                                        <input Required name="site_newfb" type="text" class="form-control" id="exampleFormControlInput1" value="<?php echo $row['site_link_fb'];?>" />
-                                    </div>
-                                    <div class="form-group mb-3">
-                                        <label for="exampleFormControlInput1">Instagram Link</label>
-                                        <input Required name="site_newig" type="text" class="form-control" id="exampleFormControlInput1" value="<?php echo $row['site_link_ig'];?>" />
-                                        
-                                    </div>
+                        <div class="form-group mb-3">
+                        <label for="exampleFormControlInput1">Github Link</label>
+                        <input Required name="site_newgithub" type="text" class="form-control" id="exampleFormControlInput1" value="<?php echo $row['site_link_github'];?>" />
                         </div>
-                        <input type="submit" class="btn btn-success mt-2" value="Update" />             
-                                        <?php
-                                        }
-                                        ?>
+                        <div class="form-group mb-3">
+                        <label for="exampleFormControlInput1">Facebook Link</label>
+                        <input Required name="site_newfb" type="text" class="form-control" id="exampleFormControlInput1" value="<?php echo $row['site_link_fb'];?>" />
                         </div>
+                        <div class="form-group mb-3">
+                        <label for="exampleFormControlInput1">Instagram Link</label>
+                        <input Required name="site_newig" type="text" class="form-control" id="exampleFormControlInput1" value="<?php echo $row['site_link_ig'];?>" />
+                        </div>
+                    </div>
+                    <input type="submit" class="btn btn-success mt-2" value="Update" />             
+                    <?php
+                        }
+                    ?>
                     </form>   
                 </div>
             </div>
         </div>
     </div>
     </div>
+    <script src="success.js"></script>
     <script src="main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

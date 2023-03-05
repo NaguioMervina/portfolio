@@ -6,7 +6,7 @@
 //$id = $_GET['id'];
   $id = (isset($_POST['id']) ? $_POST['id'] : '');
 
-// Edit About Mission
+// Edit Home
 if($_GET['action']=='edit-home'){
 
     $home_newname = $_POST['home_newname'];
@@ -29,27 +29,37 @@ if($_GET['action']=='edit-home'){
     }
 }
 
-//About section edits
-if($_GET['action']=='edit-about'){
-  $random1 = rand(1111,9999);
-  $random2 = rand(1111,9999);
-  $random3 = $random1.$random2;
-  $random3 = md5($random3);
+//Edit About
+if ($_GET['action'] == 'edit-about') {
   $about_newtitle = $_POST['about_newtitle'];
   $about_newdesc = $_POST['about_newdesc'];
-  $about_newimg = $_POST['about_newimg'];
 
-  $file_name = $_FILES['about_newimg']['name'];
-  $destination = '../upload_img/'.$random3.$file_name;
-  $destination_name = 'upload_img/'.$random3.$file_name;
-  move_uploaded_file($_FILES['about_newimg']['tmp_name'],$destination);
+  if ($_FILES['about_newimg']['name'] !== '') {
+    // A new image has been uploaded
+    $random1 = rand(1111, 9999);
+    $random2 = rand(1111, 9999);
+    $random3 = $random1 . $random2;
+    $random3 = md5($random3);
 
-  $sql = "update about set about_title='$about_newtitle', about_desc='$about_newdesc', about_img='$destination_name' where about_id=1";
+    $random_string = substr(str_shuffle("abcdefghijklmnopqrstuvwxyz"), 0, 10);
+    $file_name = $_FILES['about_newimg']['name'];
+    $destination = '../upload_img/' . $random3 . $file_name;
+    $destination_name = 'upload_img/' . $random3 . $file_name;
+
+    if (move_uploaded_file($_FILES['about_newimg']['tmp_name'], $destination)) {
+      $sql = "UPDATE about SET about_title='$about_newtitle', about_desc='$about_newdesc', about_img='$destination_name' WHERE about_id=1";
+    } else {
+      // File upload failed
+      // Handle the error as appropriate
+    }
+  } else {
+    // No new image has been uploaded
+    $sql = "UPDATE about SET about_title='$about_newtitle', about_desc='$about_newdesc' WHERE about_id=1";
+  }
 
   $result = mysqli_query($con, $sql);
-
-  mysqli_query($con, "alter table about AUTO_INCREMENT = 1");
-  
-  header("location:./about.php");
+  mysqli_query($con, "ALTER TABLE about AUTO_INCREMENT = 1");
+  header("location: ./about.php");
 }
+
 ?>
