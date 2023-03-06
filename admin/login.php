@@ -24,39 +24,34 @@ include ('../connection.php');
                 <label for="">Password</label>
                 <input type="password" name="password" class="form-control" placeholder="Enter Password" required>
             </div>
-            <p class="text-danger"><?php if(isset($_GET['error']))
-                       echo $_GET['error'];
-                        ?>
-                 </p>
             <input type="submit" name="submit" class="btn" value="Login">
-           <!-- <div>
-                <span>Dont have an account?<a href="">register here</a></span>
-            </div> -->
         </form>
     </div>
     
-
-
     <!--login backend-->
     <?php
-if(isset($_POST['submit'])){
+    if(isset($_POST['submit'])) {
         $username = mysqli_real_escape_string($con,$_POST['username']);
         $password = mysqli_real_escape_string($con,$_POST['password']);
-       // $password = md5($password);
-       
-$sql = mysqli_query($con, "SELECT * from admin_user where username = '$username' AND  password = '$password' limit 1");
-$row = mysqli_fetch_array($sql);
-        if(is_array($row)){
+        // $password = md5($password);
+        
+        $sql = mysqli_query($con, "SELECT * from admin_user where username = '$username' AND  password = '$password' limit 1");
+        $row = mysqli_fetch_array($sql);
+        if(is_array($row)) {
             $_SESSION["username"] = $row['username'];
             $_SESSION["password"] = $row['password'];
-        } else{
+            echo "<script>alert('Login successful!')</script>";
+            echo "<script>window.location.href='index.php';</script>";
+        } else {
             $error = "Invalid email or password!";
-            header("Location:login.php?error=$error");
+            echo "<script>alert('$error')</script>";
+            echo "<script>window.location.href='login.php?error=$error';</script>";
         }
     }
-    if(isset($_SESSION["username"])){
+    if(isset($_SESSION["username"])) {
         header("location:index.php");
     }
-?>
+    ?>
 </body>
+
 </html>

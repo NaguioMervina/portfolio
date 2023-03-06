@@ -63,7 +63,7 @@
                             <i class="bx bx-book-bookmark nav__icon"></i>
                             <span class="nav__name">Skills</span>
                         </a>
-                        <a href="service.php" class="nav__link">
+                        <a href="#" class="nav__link">
                             <i class="bx bx-message-square-detail nav__icon"></i>
                             <span class="nav__name">Service</span>
                         </a>
