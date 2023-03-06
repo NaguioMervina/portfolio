@@ -3,7 +3,6 @@
   if(!isset($_SESSION['username'])){
     header('location:./login.php');
 }
-
   $id = (isset($_POST['id']) ? $_POST['id'] : '');
 ?>
 <!DOCTYPE html>
@@ -37,6 +36,7 @@
             <i class="bx bx-menu" id="header-toggle"></i>
         </div>
     </header>
+    <!--Sidebar start-->
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
             <div>
@@ -70,6 +70,7 @@
         </nav>
     </div>
     <br><br>
+    <!--sidebar end-->
     <!--Edit Home Section start-->
 <div class="main-content">
   <div class="section__content section__content--p30">

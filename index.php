@@ -15,17 +15,16 @@
 </head>
 
 <body>
-<?php
-                                      $query=mysqli_query($con,"select * from home");
-                                    
-                                      while($row=mysqli_fetch_assoc($query))
-                                      {
-                                    ?>
+            <?php
+            $query=mysqli_query($con,"select * from home");                   
+            while($row=mysqli_fetch_assoc($query))
+            {
+            ?>
     <!--move to up bottom-->
     <div class="scroll-button">
         <a href="#home"><i class="fas fa-arrow-up"></i></a>
     </div>
-    <!--navigation bar-->
+    <!--navigation bar start-->
     <nav>
         <div class="navbar">
             <div class="logo"><a href="#"><?php echo $row['home_name'];?></a></div>
@@ -49,7 +48,7 @@
             <i class="fas fa-bars"></i>
         </div>
     </nav>
-
+     <!--navigation bar end-->
     <!--home section start-->
     <section class="home" id="home">
         <div class="home-content">
@@ -60,17 +59,17 @@
                 <div class="text-three"><?php echo $row['home_job'];?></div>
                 <div class="text-four">From <?php echo $row['home_country'];?></div>
                 <?php 
-                                      }
-                                      ?>
+                }
+                ?>
             </div>
             <div class="button">
                 <button>Hire Me</button>
             </div>
         </div>
     </section>
-
+    <!--home section end-->
     <!--about section start-->
-    <?php
+                                    <?php
                                       $query=mysqli_query($con,"SELECT * from about");
                                     
                                       while($row=mysqli_fetch_assoc($query))
@@ -93,10 +92,10 @@
             </div>
         </div>
     </section>
-    <?php 
+                                     <?php 
                                       }
                                       ?>
-
+    <!--about section end-->
     <!--Skills section start-->
     <section class="skills" id="skills">
         <div class="content">
@@ -134,7 +133,7 @@
         </div>
         </div>
     </section>
-
+    <!--skills section end-->                                 
     <!--service section start-->
     <section class="services" id="services">
         <div class="content">
@@ -164,7 +163,7 @@
             </div>
         </div>
     </section>
-
+    <!--service section end-->                               
     <!--contact me section start-->
     <section class="contact" id="contact">
         <div class="content">
@@ -185,12 +184,11 @@
             </div>
         </div>
     </section>
-
-    <footer>
-        <div class="text">
-            <span>Created By <a href="#">John Doe</a> | &#169; 2023 All Rights Reserved.</span>
-        </div>
-    </footer>
+    <!--contact me section end-->
+<?php
+    require 'footer.php';
+?>
+   
     <script src="script.js"></script>
 </body>
 
