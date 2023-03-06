@@ -69,12 +69,11 @@
     </section>
     <!--home section end-->
     <!--about section start-->
-                                    <?php
-                                      $query=mysqli_query($con,"SELECT * from about");
-                                    
-                                      while($row=mysqli_fetch_assoc($query))
-                                      {
-                                    ?>
+                <?php
+                   $query=mysqli_query($con,"SELECT * from about");       
+                   while($row=mysqli_fetch_assoc($query))
+                {
+                ?>
     <section class="about" id="about">
         <div class="content">
             <div class="title"><span>About Me</span></div>
@@ -92,9 +91,9 @@
             </div>
         </div>
     </section>
-                                     <?php 
-                                      }
-                                      ?>
+                 <?php 
+                 }
+                 ?>
     <!--about section end-->
     <!--Skills section start-->
     <section class="skills" id="skills">
