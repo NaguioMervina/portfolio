@@ -6,7 +6,7 @@
 //$id = $_GET['id'];
   $id = (isset($_POST['id']) ? $_POST['id'] : '');
 
-// Edit Home
+// Edit Home section
 if($_GET['action']=='edit-home'){
 
     $home_newname = $_POST['home_newname'];
@@ -29,7 +29,7 @@ if($_GET['action']=='edit-home'){
     }
 }
 
-//Edit About
+//Edit About section
 if ($_GET['action'] == 'edit-about') {
   $about_newtitle = $_POST['about_newtitle'];
   $about_newdesc = $_POST['about_newdesc'];
@@ -43,6 +43,14 @@ if ($_GET['action'] == 'edit-about') {
 
     $random_string = substr(str_shuffle("abcdefghijklmnopqrstuvwxyz"), 0, 10);
     $file_name = $_FILES['about_newimg']['name'];
+    $file_type = $_FILES['about_newimg']['type'];
+    $allowed_types = ['image/jpeg', 'image/png', 'image/gif']; // allowed image types
+
+    // check if the file type is allowed
+    if (!in_array($file_type, $allowed_types)) {
+      exit();
+    }
+
     $destination = '../upload_img/' . $random3 . $file_name;
     $destination_name = 'upload_img/' . $random3 . $file_name;
 
@@ -61,5 +69,4 @@ if ($_GET['action'] == 'edit-about') {
   mysqli_query($con, "ALTER TABLE about AUTO_INCREMENT = 1");
   header("location: ./about.php");
 }
-
 ?>

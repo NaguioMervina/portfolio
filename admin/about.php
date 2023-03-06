@@ -33,6 +33,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" referrerpolicy="no-referrer"
         />
+        <script src="validate.js"></script>
         <link rel="stylesheet" href="admin.css">
         <title>Admin Panel</title>
     </head>
@@ -88,30 +89,30 @@
           <div class="float-left">
             <h3>Edit About Section</h3>
           </div>
-          <br /><br />
+          <br />
           <form action="./edit.php?id=<?php echo $id;?>&action=edit-about" method="POST" enctype="multipart/form-data">
             <?php
-              $query=mysqli_query($con,"SELECT * from about");
+              $query=mysqli_query($con,"SELECT * FROM about");
               while($row=mysqli_fetch_assoc($query))
               {
             ?>
               <div class="form-group mb-3">
-                <label for="exampleFormControlInput1">Title</label>
-                <input Required name="about_newtitle" type="text" class="form-control" id="exampleFormControlInput1" value="<?php echo $row['about_title'];?>"/>
+                <label for="about_title">Title</label>
+                <input required name="about_newtitle" type="text" class="form-control" id="about_title" value="<?php echo $row['about_title'];?>"/>
               </div>
               <div class="form-group mb-3">
-                <label for="exampleFormControlInput1">Image preview</label><br>
-                <img src="../<?php echo $row['about_img'];?>" height="100">
+                <label for="about_img">About Image</label><br>
+                <img src="../<?php echo $row['about_img']; ?>" height="100">
               </div>
               <div class="form-group mb-3">
-                <input type="file" name="about_newimg" class="" />
+                <input type="file" name="about_newimg" id="about_newimg" accept="image/*" onchange="validateFile()" />
                 <label><?php echo basename($row['about_img']); ?></label>
               </div>
               <div class="form-group mb-3">
-                <label for="exampleFormControlTextarea1">About Description</label>
-                <textarea Required class="form-control" name="about_newdesc" id="exampleFormControlTextarea1" rows="5"><?php echo $row['about_desc'];?></textarea>
+                <label for="about_desc">About Description</label>
+                <textarea required class="form-control" name="about_newdesc" id="about_desc" rows="5"><?php echo $row['about_desc'];?></textarea>
               </div>
-              <input type="submit" class="btn btn-success mt-2" value="Update"/>
+              <input type="submit" class="btn btn-success" value="Update"/>
             <?php
               }
             ?>
@@ -122,6 +123,7 @@
     </div>
   </div>
 </div>
+
 
         </div>
         <script src="success.js"></script>
