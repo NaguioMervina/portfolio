@@ -58,7 +58,6 @@ if ($_GET['action'] == 'edit-about') {
       $sql = "UPDATE about SET about_title='$about_newtitle', about_desc='$about_newdesc', about_img='$destination_name' WHERE about_id=1";
     } else {
       // File upload failed
-      // Handle the error as appropriate
     }
   } else {
     // No new image has been uploaded

@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="css/admin.css">
     <title>Admin Panel</title>
 </head>
 
@@ -133,8 +133,8 @@
   </div>
 </div>
 <!--Edit Home section end-->
-    <script src="success.js"></script>
-    <script src="main.js"></script>
+    <script src="js/success.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

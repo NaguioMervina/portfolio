@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="style.css">
@@ -156,7 +157,7 @@
                     <div class="icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <div class="topic">Digital Marketing</div>
+                    <div class="topic">UI/UX</div>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque facere rem architecto voluptate error corrupti expedita, assumenda ex ab sint nostrum omnis facilis quibusdam repellat odio suscipit dolore? Laborum, ipsum?</p>
                 </div>
             </div>
@@ -171,15 +172,12 @@
                 <div class="topic">Have any Projects?</div>
                 <div class="contact-box">
                  <form>
-                    <input type="text" class="input-field" id="name" placeholder="Enter your name">
-                    <input type="text" class="input-field" id="name" placeholder="Enter your name">
-                    <input type="text" class="input-field" id="name" placeholder="Enter your name">
+                    <input type="text" class="input-field" id="name" placeholder="First Name">
+                    <input type="text" class="input-field" id="name" placeholder="Last Name">
+                    <input type="text" class="input-field" id="name" placeholder="Email">
                     <textarea type="text" class="input-field textarea-field" placeholder="Your message"></textarea>
                     <button type="button" class="btn">Send Message</button>
                  </form>                  
-                <!--<div class="button">
-                    <button>Let's Chat</button>
-                </div> -->
             </div>
         </div>
     </section>

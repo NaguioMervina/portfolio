@@ -34,7 +34,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" referrerpolicy="no-referrer"
         />
         <script src="validate.js"></script>
-        <link rel="stylesheet" href="admin.css">
+        <link rel="stylesheet" href="css/admin.css">
         <title>Admin Panel</title>
     </head>
 
@@ -43,9 +43,7 @@
             <div class="header__toggle">
                 <i class="bx bx-menu" id="header-toggle"></i>
             </div>
-           <!-- <div class="header__img">
-                <img src="images/about.jpg">
-            </div> -->
+          
         </header>
         <div class="l-navbar" id="nav-bar">
             <nav class="nav">
@@ -126,8 +124,8 @@
 
 
         </div>
-        <script src="success.js"></script>
-        <script src="main.js"></script>
+        <script src="js/success.js"></script>
+        <script src="js/main.js"></script>
     </body>
 
     </html>
